@@ -23,8 +23,6 @@ inv <- NULL
 
 ## Write a short comment describing this function
 
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
 
 cacheSolve <- function(x, ...) {
         inv <- x$getInverse()
@@ -32,8 +30,8 @@ cacheSolve <- function(x, ...) {
                 message("getting cached data")
                 return(inv)
         }
-        mat <- x$get()
-        inv<- solve(mat, ...)
+        data <- x$get()
+        inv<- solve(data, ...)
         x$setInverse(inv)
         inv
 }
